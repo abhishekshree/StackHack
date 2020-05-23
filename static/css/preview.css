@@ -1,0 +1,26 @@
+@import url(https://fonts.googleapis.com/css?family=Nunito:300,400,700);
+@import url(https://fonts.googleapis.com/css?family=Bree+Serif);
+
+body{
+    height: 100vh;
+    font-family: "Nunito";
+    font-size: 1.618rem;
+}
+
+.col{
+    height: 60vh;
+}
+.header{
+    font-family: 'Bree Serif';
+}
+
+.auth{
+    min-width: 70%;
+    width: 70%;
+    max-width: 80%;
+    max-height: 768px;
+    border: 3px solid red;
+}
+.btn{
+    margin: 1em 1em;
+}

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <style>
+        img{
+            max-width: 800px;
+            max-height: 800px;
+        }
+    </style>
+    <title>Preview</title>
+</head>
+
+<body>
+    <div class="section no-pad-bot" id="index-banner form">
+        <div class="container row">
+            <h1 class=" header center orange-text">PREVIEW-FORM</h1>
+        </div>
+    </div>
+    <div class="container">
+
+        <div class="row">
+
+            <div class="card">
+                <div class="card-content card-panel hoverable teal white-text ">
+                    <!-- <span class="card-title grey-text text-darken-4">About to be a User<i class="material-icons right">close</i></span> -->
+                    <div class="row"><span>Name: </span><span>{{context.get('name')}}</span></div>
+                    <div class="row"><span>Email: </span><span>{{context.email}}</span></div>
+                    <div class="row"><span>Description: </span><span>{{context.desc}}</span></div>
+                    <div class="row"><span>Registration Type: </span><span>{{context.type}}</span></div>
+                    <div class="row"><span>Registration Number: </span><span>{{ context.reg }}</span></div>
+                    <div class="row"><span>Number of Tickets: </span><span>{{context.ticket}}</span></div>
+                </div>
+
+                <div class="card-image waves-effect waves-block waves-light">
+                    <img class="activator center" src="{{url_for('static', filename='images/')}}{{context.file}} ">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container row" style="margin-bottom: 20px;">
+    <form action="" method="POST" class="col">
+        <input type="submit" class="btn center">
+    </form>
+        <a href="{{ url_for('revert') }}" class="btn center col">Change Details</a>
+    </div>
+
+    <!-- SCRIPTS -->
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+</body>
+
+</html>

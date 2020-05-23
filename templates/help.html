@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0" />
+  <title>Welcome User </title>
+  <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+</head>
+
+<body>
+  <!-- NAVBAR -->
+  <nav class="light-blue lighten-1" role="navigation">
+    <div class="nav-wrapper container"><a id="logo-container" href="{{ url_for('index') }}" class="brand-logo">Events</a>
+      <ul class="right hide-on-med-and-down">
+        <li><a href="{{url_for('login')}}">Admin</a></li>
+        <li><a href="{{url_for('all')}}">All Events</a></li>
+        <li><a href="{{url_for('index')}}">Back to home</a></li>
+        <li><a href="{{ url_for('help') }}">Help</a></li>
+      </ul>
+
+      <ul id="nav-mobile" class="sidenav">
+        <li><a href="{{url_for('login')}}">Admin</a></li>
+        <li><a href="{{url_for('all')}}">All Events</a></li>
+        <li><a href="{{url_for('index')}}">Back to home</a></li>
+        <li><a href="{{ url_for('help') }}">Help</a></li>
+      </ul>
+      <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+    </div>
+  </nav>
+
+  <div class="section no-pad-bot" id="index-banner content">
+    <div class="container">
+      <br><br>
+      <h1 class="header center orange-text">COVID-19 Volunteer</h1>
+      <div class="row center">
+        <h5 class="header col s12 light">Be a part of a good cause. Get yourself tickets to this charity.</h5>
+      </div>
+      <div class="row center">
+        <a href="{{ url_for('form') }}" id="register-form-button" class="btn-large waves-effect waves-light orange">Create an Event</a>
+      </div>
+      <br><br>
+    </div>
+  </div>
+
+  <div class="container">
+    <h2>Who we are ?</h2>
+    <p style="font-size: larger;">We are a bunch of active citizens who are trying to help the needy by all the means possible. By registering new events everyday, we're trying to solve the daily problems of man and animal in this recent time of crisis.</p>
+    <hr>
+    <h2>What do these events do ? </h2>
+    <p style="font-size: larger;">By the creation of such events, we are planning to distibute the help we provide to every terrain in this country. Events can be monetral as donating food and medicine to the poor as well as a moral event including a bunch of people rejuvenating the people who are losing hope in this crisis situation by any means.</p>
+    <hr>
+    <h2>But what are tickets here ?</h2>
+    <p style="font-size: larger;">Tickets are corresponding to the maximum number of participation the creator of the event is expecting or needs. If you're interested in participating in a certain event you write an email to the creator regarding your location and time you can spare for the event. It is for the well being of all that the number of participants do not be more than the tickets to maintain the practice of social distancing for the well being of everyone.</p>
+  </div>
+  
+  <footer class="page-footer orange">
+    <div class="footer-copyright">
+      <div class="container">
+        Made by Abhishek.
+      </div>    
+    </div>
+  </footer>
+
+
+
+  <!-- SCRIPTS -->
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+  <script src="{{url_for('static', filename='js/app.js')}}"></script>
+</body>
+
+</html>
