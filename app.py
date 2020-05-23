@@ -23,7 +23,6 @@ login_manager.init_app(app)
 login_manager.login_view = 'login'
 
 app.config['SECRET_KEY'] = 'you-will-never-guess'
-app.config['UPLOAD_FOLDER'] = '/uploads'
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///database.db'
 
 
@@ -98,7 +97,7 @@ def form():
         file = request.files['file']
         regtype = regtypes[int(form.Regtype.data)-1]
         regno = name[:1] + str(random.randint(10000, 1000000000))
-        file.save(os.path.join('static/images',
+        file.save(os.path.join(os.getcwd()+'static/images',
                                secure_filename(file.filename)))
 
         context = {
@@ -120,7 +119,7 @@ def form():
 def preview():
     dict = eval(request.args.get('context', None))
     if request.method == 'POST':
-        os.rename("static/images/" + dict['file'],
+        os.rename(os.getcwd() +"static/images/" + dict['file'], os.getcwd()+
                   "static/identities/" + dict['file'])
         new_register = Register(
             RegistrationNumber=dict['reg'],
