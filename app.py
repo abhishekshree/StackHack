@@ -97,7 +97,7 @@ def form():
         file = request.files['file']
         regtype = regtypes[int(form.Regtype.data)-1]
         regno = name[:1] + str(random.randint(10000, 1000000000))
-        file.save(os.path.join(os.getcwd()+'static/images',
+        file.save(os.path.join(os.getcwd(),'static/images',
                                secure_filename(file.filename)))
 
         context = {
